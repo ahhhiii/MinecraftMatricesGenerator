@@ -1,0 +1,9 @@
+[
+  {
+    "modid": "mmg",
+    "name": "MatricesGenerator",
+    "description": "Commands to create a JSON for matrices.",
+    "version": "${version}",
+    "mcversion": "${mcversion}"
+  }
+]
