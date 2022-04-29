@@ -1,12 +1,15 @@
 package net.bruhitsalex.mmg.manager;
 
-import com.google.gson.*;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 import net.bruhitsalex.mmg.utils.ChatUtils;
 import net.minecraft.util.BlockPos;
 
 import java.awt.*;
 import java.io.File;
-import java.io.FileWriter;
+import java.nio.file.Files;
 import java.util.List;
 
 public class JSONManager {
@@ -27,7 +30,7 @@ public class JSONManager {
         }
 
         try {
-            new GsonBuilder().setPrettyPrinting().create().toJson(json, new FileWriter(tempFile));
+            Files.write(tempFile.toPath(), new GsonBuilder().setPrettyPrinting().create().toJson(json).getBytes());
             ChatUtils.sendMessage("Written to file: " + tempFile.getAbsolutePath());
             if (Desktop.isDesktopSupported()) {
                 Desktop.getDesktop().open(tempFile);
