@@ -1,7 +1,9 @@
 package net.bruhitsalex.mmg.utils;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 
 public class Utils {
@@ -21,8 +23,12 @@ public class Utils {
         }
     }
 
-    public static BlockPos round(Entity entity) {
-        return new BlockPos((int) entity.posX, (int) entity.posY, (int) entity.posZ);
+    public static BlockPos getBlockPos() {
+        EntityPlayer player = Minecraft.getMinecraft().thePlayer;
+        int blockX = MathHelper.floor_double(player.posX);
+        int blockY = MathHelper.floor_double(player.posY-0.2D - player.getYOffset());
+        int blockZ = MathHelper.floor_double(player.posZ);
+        return new BlockPos(blockX, blockY, blockZ);
     }
 
     public static Vec3 renderable(BlockPos position) {

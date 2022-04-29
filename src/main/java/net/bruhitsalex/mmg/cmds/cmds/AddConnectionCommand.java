@@ -5,7 +5,6 @@ import net.bruhitsalex.mmg.manager.MMGManager;
 import net.bruhitsalex.mmg.manager.Point;
 import net.bruhitsalex.mmg.utils.ChatUtils;
 import net.bruhitsalex.mmg.utils.Utils;
-import net.minecraft.client.Minecraft;
 import net.minecraft.util.BlockPos;
 
 import java.util.List;
@@ -35,7 +34,7 @@ public class AddConnectionCommand extends Command {
             return;
         }
 
-        BlockPos currentPos = Utils.round(Minecraft.getMinecraft().thePlayer);
+        BlockPos currentPos = Utils.getBlockPos();
         Optional<Point> secondPointOptional = MMGManager.getList().stream()
                 .filter(point1 -> point1.getPosition().equals(currentPos))
                 .findFirst();
