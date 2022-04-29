@@ -1,5 +1,6 @@
 package net.bruhitsalex.mmg.manager;
 
+import lombok.Getter;
 import net.bruhitsalex.mmg.utils.Utils;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 public class MMGManager {
 
     private static int pos;
-    private static List<Point> list;
+    @Getter private static List<Point> list;
 
     public static void init() {
         pos = -1;
@@ -22,7 +23,7 @@ public class MMGManager {
         }
     }
 
-    public boolean isActive() {
+    public static boolean isActive() {
         return list != null;
     }
 
