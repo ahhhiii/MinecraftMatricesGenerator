@@ -1,6 +1,7 @@
 package net.bruhitsalex.mmg;
 
-import net.bruhitsalex.mmg.manager.MMGManager;
+import net.bruhitsalex.mmg.cmds.BaseCommand;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
@@ -9,9 +10,7 @@ public class MatricesGenerator {
 
     @Mod.EventHandler
     public void onInit(FMLInitializationEvent event) {
-        MMGManager.init();
-
-
+        ClientCommandHandler.instance.registerCommand(new BaseCommand());
     }
 
 }
