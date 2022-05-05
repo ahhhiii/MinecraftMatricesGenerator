@@ -1,6 +1,6 @@
 # Minecraft Matrices Generator [MMG]
 
-A tool created to use commands to generate an adjacency list of all your positions, with rendering to show off all your points before you compile them.
+A tool created to use commands to generate an adjacency list of all your positions, with rendering to show off all your points before you compile them to JSON.
 
 ## Commands
 
@@ -14,6 +14,55 @@ A tool created to use commands to generate an adjacency list of all your positio
 
 Note that 'addconnection' requires you to be standing on a node, to connect it to the node you mention in the command.
 
-## Previews
+## Preview
 
 ![img](https://i.gyazo.com/67fa5a18ad882342de7bce3b7d07e7e5.png)
+
+## Compiled Example
+
+This just shows the first few nodes of the list... because this file is 2000 lines long.
+
+```json
+{
+  "A": {
+    "name": "A",
+    "position": {
+      "x": -129,
+      "y": 74,
+      "z": -195
+    },
+    "connectedTo": [
+      "B"
+    ]
+  },
+  "B": {
+    "name": "B",
+    "position": {
+      "x": -132,
+      "y": 74,
+      "z": -183
+    },
+    "connectedTo": [
+      "A",
+      "H",
+      "G",
+      "C",
+      "E"
+    ]
+  },
+  "C": {
+    "name": "C",
+    "position": {
+      "x": -146,
+      "y": 74,
+      "z": -183
+    },
+    "connectedTo": [
+      "B",
+      "D",
+      "E"
+    ]
+  },
+    
+...
+```
