@@ -16,7 +16,7 @@ Note that 'addconnection' requires you to be standing on a node, to connect it t
 
 ## Preview
 
-![img](https://i.gyazo.com/67fa5a18ad882342de7bce3b7d07e7e5.png)
+![img](https://i.gyazo.com/3e59911cff5a56f2b6a66cbb928d864f.png)
 
 ## Compiled Example
 
